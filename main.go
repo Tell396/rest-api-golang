@@ -3,9 +3,10 @@ package main
 import (
 	"fmt"
 	"github.com/gorilla/mux"
-	"go-contacts/app"
 	"net/http"
 	"os"
+	"rest-api-golang/app"
+	"rest-api-golang/controllers"
 )
 
 func main() {

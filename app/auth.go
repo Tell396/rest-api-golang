@@ -3,11 +3,11 @@ package app
 import (
 	"context"
 	"fmt"
-	jwt "github.com/dgrijalva/jwt-go"
-	"go-contacts/models"
-	u "lens/utils"
+	"github.com/dgrijalva/jwt-go"
 	"net/http"
 	"os"
+	"rest-api-golang/models"
+	u "rest-api-golang/utils"
 	"strings"
 )
 
@@ -20,6 +20,7 @@ var JwtAuthentication = func(next http.Handler) http.Handler {
 
 		//check if request does not need authentication, serve the request if it doesn't need it
 		for _, value := range notAuth {
+
 			if value == requestPath {
 				next.ServeHTTP(w, r)
 				return
@@ -70,7 +71,7 @@ var JwtAuthentication = func(next http.Handler) http.Handler {
 		}
 
 		//Everything went well, proceed with the request and set the caller to the user retrieved from the parsed token
-		fmt.Sprintf("User %", tk.Username) //Useful for monitoring
+		fmt.Sprintf("User %", tk.UserId) //Useful for monitoring
 		ctx := context.WithValue(r.Context(), "user", tk.UserId)
 		r = r.WithContext(ctx)
 		next.ServeHTTP(w, r) //proceed in the middleware chain!
