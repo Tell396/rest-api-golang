@@ -2,9 +2,9 @@ package controllers
 
 import (
 	"encoding/json"
-	"go-contacts/models"
-	u "go-contacts/utils"
 	"net/http"
+	"rest-api-golang/models"
+	u "rest-api-golang/utils"
 )
 
 var CreateContact = func(w http.ResponseWriter, r *http.Request) {

@@ -1,12 +1,13 @@
 package models
 
 import (
+	"os"
+	u "rest-api-golang/utils"
+	"strings"
+
 	"github.com/dgrijalva/jwt-go"
 	"github.com/jinzhu/gorm"
 	"golang.org/x/crypto/bcrypt"
-	u "lens/utils"
-	"os"
-	"strings"
 )
 
 /*

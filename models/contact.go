@@ -2,8 +2,9 @@ package models
 
 import (
 	"fmt"
+	u "rest-api-golang/utils"
+
 	"github.com/jinzhu/gorm"
-	u "go-contacts/utils"
 )
 
 type Contact struct {
